@@ -91,16 +91,35 @@ WSGI_APPLICATION = 'djangoProject_movie.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'movie',
+        #'USER': 'postgres',
+        #'PASSWORD': '272371rad',
+        #'HOST': 'localhost',
+        #'PORT': '5432',
+    #}
+#}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'movie',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': '272371rad',
-        'HOST': 'localhost',
+        'HOST': 'dm_db',
         'PORT': '5432',
     }
 }
+#DATABASES = {
+    #'default': {
+        #'ENGINE': os.environ.get('POSTGRES_ENGINE', 'django.db.backends.sqlite3'),
+        #'NAME': os.environ.get('POSTGRES_DB', os.path.join(BASE_DIR, 'db.sqlite3')),
+        #'USER': os.environ.get('POSTGRES_USER', 'user'),
+        #'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+        #'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
+        #'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+    #}
+#}
 
 
 # Password validation
