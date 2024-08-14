@@ -106,8 +106,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
+        'PASSWORD': '123456',
         'HOST': 'dm_db',
-        'PORT': '5432',
+        'PORT': 5432
     }
 }
 #DATABASES = {
@@ -337,5 +338,6 @@ SWAGGER_SETTINGS = {
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'http://localhost:8081',
+    'http://127.0.0.1:8000',
 ]

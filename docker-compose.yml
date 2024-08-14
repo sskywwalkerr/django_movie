@@ -5,15 +5,24 @@ services:
     image: postgres:10.1-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-  dm_web:
-    build: .
-    command: python /usr/src/dm_rest/manage.py runserver 0.0.0.0:8000
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+  django:
+    container_name: dm_movie
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: bash -c "python /usr/src/dm_rest/manage.py migrate --noinput &&
+             python /usr/src/dm_rest/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/dm_rest
     ports:
       - 8000:8000
     depends_on:
       - dm_db
+
 volumes:
   postgres_data:
 
