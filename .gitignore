@@ -1,3 +1,14 @@
-.venv
 .idea
+idea
+
 requirements.txt
+
+dist
+db.sqlite3
+
+.venv
+
+.env.dev
+
+!*media/.gitkeep
+media/*
