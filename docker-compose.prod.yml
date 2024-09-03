@@ -9,6 +9,9 @@ services:
     command: gunicorn djangoProject_movie.wsgi:application --bind 0.0.0.0:8000
     expose:
       - 8000
+    volumes:
+      - static_volume:/home/app/web/static
+      - media_volume:/home/app/web/media
     env_file:
       - ./.env.prod
     depends_on:
