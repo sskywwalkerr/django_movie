@@ -7,7 +7,8 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
     && apt-get install netcat -y
-RUN apt-get upgrade -y && apt-get install postgresql-server-dev-all gcc python3-dev musl-dev -y
+#RUN apt-get upgrade -y && apt-get install postgresql-server-dev-all gcc python3-dev musl-dev -y
+RUN apt-get upgrade -y && apt-get install postgresql gcc python3-dev musl-dev -y
 RUN pip install --upgrade pip
 
 COPY ./requirements.txt .

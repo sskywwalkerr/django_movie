@@ -6,7 +6,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update
-RUN apt-get upgrade -y && apt-get -y install postgresql-server-dev-all gcc python3-dev musl-dev
+#RUN apt-get upgrade -y && apt-get -y install postgresql-server-dev-all gcc python3-dev musl-dev
+RUN apt-get upgrade -y && apt-get -y install postgresql gcc python3-dev musl-dev
 
 RUN pip install --upgrade pip
 
